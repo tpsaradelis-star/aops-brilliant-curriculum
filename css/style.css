@@ -1,88 +1,166 @@
-body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.5;
+/* Global */
+
+* {
+  box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background-color: #f5f7fb;
+  color: #111827;
+}
+
+a {
+  color: #2563eb;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+/* Header and navigation */
+
 header {
-  background-color: #1f2933;
-  color: white;
-  padding: 1rem 2rem;
+  background-color: #3e5871;      /* NNS blue */
+  color: #ffffff;
+  padding: 16px 40px;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.25);
 }
 
 header h1 {
   margin: 0;
-  font-size: 1.6rem;
+  font-size: 22px;
+  letter-spacing: 0.02em;
+  font-weight: 600;
 }
 
 nav {
-  background-color: #f5f7fa;
-  border-bottom: 1px solid #d8dee4;
+  background-color: #3e5871;
 }
 
 nav ul {
   list-style: none;
   margin: 0;
-  padding: 0.5rem 2rem;
+  padding: 0 40px;
   display: flex;
-  gap: 1.5rem;
+  gap: 4px;
 }
 
-nav a {
-  text-decoration: none;
-  color: #334e68;
-  font-weight: 500;
+nav ul li {
+  margin: 0;
 }
 
-nav a:hover {
-  text-decoration: underline;
+nav ul li a {
+  display: block;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: #e5e7eb;
+  border-radius: 4px;
+  transition: background-color 0.15s ease, color 0.15s ease;
 }
+
+nav ul li a:hover,
+nav ul li a:focus,
+nav ul li a.active {
+  background-color: #506a83;      /* lighter NNS blue */
+  color: #ffffff;
+}
+
+/* Main layout */
 
 main {
-  padding: 2rem;
-  max-width: 960px;
-  margin: 0 auto;
+  max-width: 1000px;
+  margin: 40px auto 80px;
+  padding: 0 24px;
 }
 
 h2 {
-  margin-top: 1.5rem;
+  font-size: 22px;
+  margin: 24px 0 8px;
+  color: #111827;
 }
+
+h3 {
+  color: #111827;
+}
+
+p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #374151;
+}
+
+/* Cards */
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1rem;
-  margin-top: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 24px;
+  margin-top: 16px;
 }
 
 .card {
-  border: 1px solid #d8dee4;
-  border-radius: 8px;
-  padding: 1rem;
   background-color: #ffffff;
+  border-radius: 10px;
+  padding: 16px 18px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.12);
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease,
+    border-color 0.12s ease;
 }
 
 .card h3 {
-  margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin: 0 0 8px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.card p {
+  margin: 0 0 12px;
+  font-size: 14px;
 }
 
 .card a {
-  display: inline-block;
-  margin-top: 0.5rem;
-  color: #1366d6;
-  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
 }
 
-.card a:hover {
-  text-decoration: underline;
+.card:hover {
+  transform: translateY(-2px);
+  border-color: #3e5871;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.18);
 }
+
+/* Footer */
 
 footer {
-  border-top: 1px solid #d8dee4;
-  padding: 1rem 2rem;
-  font-size: 0.85rem;
-  color: #6b778c;
-  margin-top: 3rem;
+  border-top: 1px solid #e5e7eb;
+  padding: 16px 40px;
+  font-size: 13px;
+  color: #6b7280;
+  background-color: #f9fafb;
+}
+
+/* Small screens */
+
+@media (max-width: 640px) {
+  header {
+    padding: 12px 16px;
+  }
+
+  nav ul {
+    padding: 0 16px 8px;
+    flex-wrap: wrap;
+    row-gap: 6px;
+  }
+
+  main {
+    margin-top: 24px;
+    padding: 0 16px;
+  }
 }
